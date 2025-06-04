@@ -30,6 +30,9 @@ fn capitalize_words_string(words: &[&str]) -> String {
 
 fn main() {
     // You can optionally experiment here.
+    let c = 'ß';
+    println!("{}", c.to_uppercase().to_string()); // 输出 "S" ❌
+    println!("{}", c.to_uppercase().collect::<String>()); // 输出 "SS" ✅
 }
 
 #[cfg(test)]
