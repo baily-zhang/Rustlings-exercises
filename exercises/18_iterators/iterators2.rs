@@ -15,17 +15,15 @@ fn capitalize_first(input: &str) -> String {
 // Return a vector of strings.
 // ["hello", "world"] -> ["Hello", "World"]
 fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
-    words.iter().map(|word| capitalize_first(word)).collect()
+    // words.iter().map(|word| capitalize_first(word)).collect()
+    words.iter().map(|word| capitalize_first(&word)).collect()
 }
 
 // TODO: Apply the `capitalize_first` function again to a slice of string
 // slices. Return a single string.
 // ["hello", " ", "world"] -> "Hello World"
 fn capitalize_words_string(words: &[&str]) -> String {
-    words
-        .iter()
-        .map(|word| capitalize_first(word))
-        .collect::<String>()
+    capitalize_words_vector(words).concat()
 }
 
 fn main() {
