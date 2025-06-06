@@ -44,7 +44,6 @@ fn list_of_results() -> [Result<i64, DivisionError>; 4] {
         .try_into()
         .unwrap()
 }
-
 fn main() {
     // You can optionally experiment here.
 }
