@@ -100,8 +100,9 @@ mod tests {
         println!("reference count = {}", Rc::strong_count(&sun)); // 2 references
 
         // TODO
-        println!("reference count = {}", Rc::strong_count(&sun)); // 1 reference
         drop(mercury);
+        println!("reference count = {}", Rc::strong_count(&sun)); // 1 reference
+
         assert_eq!(Rc::strong_count(&sun), 1);
     }
 }
