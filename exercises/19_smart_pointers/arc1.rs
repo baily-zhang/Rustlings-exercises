@@ -17,23 +17,21 @@
 
 // Don't change the lines below.
 #![forbid(unused_imports)]
+
 use std::{sync::Arc, thread};
 
 fn main() {
-    let numbers: Vec<_> = (0..100u32).collect();
-
-    // TODO: Define `shared_numbers` by using `Arc`.
-    let shared_numbers = Arc::new(numbers);
+    let numbers = (0..100u32).collect::<Vec<u32>>();
 
     let mut join_handles = Vec::new();
+    let share_numbers = Arc::new(numbers);
 
     for offset in 0..8 {
-        // TODO: Define `child_numbers` using `shared_numbers`.
-        let child_numbers = shared_numbers.clone();
+        let child_numbers = Arc::clone(&share_numbers);
 
         let handle = thread::spawn(move || {
             let sum: u32 = child_numbers.iter().filter(|&&n| n % 8 == offset).sum();
-            println!("Sum of offset {offset} is {sum}");
+            println!("{} {}", offset, sum);
         });
 
         join_handles.push(handle);
