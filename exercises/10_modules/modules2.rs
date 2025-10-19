@@ -1,22 +1,26 @@
 // You can bring module paths into scopes and provide new names for them with
 // the `use` and `as` keywords.
 
-pub mod delicious_snacks {
+mod delicious_snacks {
     // TODO: Add the following two `use` statements after fixing them.
+    // use self::fruits::PEAR as ???;
+    // use self::veggies::CUCUMBER as ???;
 
-    pub mod fruits {
+    mod fruits {
         pub const PEAR: &str = "Pear";
         pub const APPLE: &str = "Apple";
     }
 
-    pub mod veggies {
+    mod veggies {
         pub const CUCUMBER: &str = "Cucumber";
         pub const CARROT: &str = "Carrot";
     }
 }
 
 fn main() {
-    use crate::delicious_snacks::fruits::PEAR as fruit;
-    use crate::delicious_snacks::veggies::CUCUMBER as veggie;
-    println!("favorite snacks: {} and {}", fruit, veggie,);
+    println!(
+        "favorite snacks: {} and {}",
+        delicious_snacks::fruit,
+        delicious_snacks::veggie,
+    );
 }

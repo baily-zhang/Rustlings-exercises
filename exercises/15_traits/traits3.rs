@@ -3,9 +3,7 @@ trait Licensed {
     // implementors like the two structs below can share that default behavior
     // without repeating the function.
     // The default license information should be the string "Default license".
-    fn licensing_info(&self) -> String {
-        "Default license".to_string()
-    }
+    fn licensing_info(&self) -> String;
 }
 
 struct SomeSoftware {
