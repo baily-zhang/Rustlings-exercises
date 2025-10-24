@@ -1,5 +1,5 @@
 // TODO: Fix the compiler error about calling a private function.
-pub mod sausage_factory {
+mod sausage_factory {
     // Don't let anybody outside of this module see this!
     fn get_secret_recipe() -> String {
         String::from("Ginger")
