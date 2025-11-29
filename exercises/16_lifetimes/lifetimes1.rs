@@ -17,7 +17,6 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
     fn test_longest() {
         assert_eq!(longest("abcd", "123"), "abcd");
