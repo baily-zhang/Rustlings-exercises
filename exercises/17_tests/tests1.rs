@@ -12,7 +12,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     // TODO: Import `is_even`. You can use a wildcard to import everything in
-    use super::is_even;
+    use crate::*;
     // the outer module.
 
     #[test]
