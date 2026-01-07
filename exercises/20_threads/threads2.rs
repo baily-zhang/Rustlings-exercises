@@ -20,6 +20,7 @@ fn main() {
 
             // TODO: You must take an action before you update a shared value.
             status_shared.jobs_done += 1;
+            o
         });
         handles.push(handle);
     }
