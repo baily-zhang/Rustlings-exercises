@@ -29,6 +29,7 @@ fn send_tx(q: Queue, tx: mpsc::Sender<u32>) {
         for val in q.second_half {
             println!("Sending {val:?}");
             tx.send(val).unwrap();
+
             thread::sleep(Duration::from_millis(250));
         }
     });
